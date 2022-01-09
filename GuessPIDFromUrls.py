@@ -32,11 +32,14 @@ Example:
   GuessPIDFromUrls.py -u "http://null/?proc={PID}/cmdline" -s 100 -e 6000 -E ^nofound 
   # (.*) will be return.
   GuessPIDFromUrls.py -u "http://null/?proc={PID}/cmdline" -s 100 -e 6000 -G /proc/(.*) 
+  # select with field number.
+  GuessPIDFromUrls.py -u "http://null/?proc={PID}/cmdline" -s 100 -e 6000 -G /proc/(.*)/(.*) -F 2
+
 """)
 
 parser.add_argument('-u',"--url",type=str, metavar="url", required=True, help="what url will be guess (Flag:{PID})")
 parser.add_argument('-t',"--thread",type=int,metavar="num",default=10,help="number of threads (Default:10)")
-parser.add_argument('-E',"--exclude",type=str,metavar="str",nargs="+",help="if exits those str,it will be filterd using regular format")
+parser.add_argument('-E',"--exclude",type=str,metavar="str",help="if exits those str, it will be filterd using regular format")
 parser.add_argument('-G',"--grep",type=str,metavar="str",help="grep from return message and using <spaces> and using regular format")
 parser.add_argument('-F',"--fields",type=int,metavar="num",default=1,help="select only these fields (Default:1)")
 parser.add_argument('-s','--start',type=int,metavar="num",default=1,help="guess PID start from (Default:1)")
@@ -54,8 +57,7 @@ def fetch_thread(pid):
     global args
     global save_output
     url = args.url.replace("{PID}",str(pid)).strip()
-    # try:
-    if True:
+    try:
         get=requests.get(url,timeout=args.timeout)
 
         if (args.code != 0 ):
@@ -78,8 +80,8 @@ def fetch_thread(pid):
         print(output_thread)
         if (args.output != None):
             save_output = save_output + output_thread + "\n"
-    # except Exception as e:
-    #     pass
+    except Exception as e:
+        pass
 
 
 print("[+] Starting threads ...")
