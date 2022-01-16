@@ -27,9 +27,13 @@ wget "https://raw.githubusercontent.com/rebootuser/LinEnum/master/LinEnum.sh" -O
 
 echo [+] Downloading BeRoot ...
 git clone "https://github.com/AlessandroZ/BeRoot.git"
+rm -rf BeRoot/Windows
+rm -rf BeRoot/README.md
 
 echo [+] Downloading unix-privesc-check ...
-wget "https://raw.githubusercontent.com/pentestmonkey/unix-privesc-check/master/upc.sh" -O upc.sh
+git clone "https://github.com/pentestmonkey/unix-privesc-check.git"
+rm -rf unix-privesc-check/doc
+rm -rf unix-privesc-check/tools
 
 echo [+] Downloading sudo killer
 wget "https://raw.githubusercontent.com/TH3xACE/SUDO_KILLER/master/SUDO_KILLERv2.2.1.sh" -O sudokiller.sh
@@ -44,10 +48,6 @@ cd ..
 
 echo [+] Copying inject files ...
 cp inject/* tmpdata/*
-
-echo [+] Removing other files ...
-rm -rf tmpdata/BeRoot/Windows
-rm -rf tmpdata/BeRoot/README.md
 
 echo [+] Making PE Pack ...
 rm -rf PE_Pack.tar.gz

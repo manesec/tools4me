@@ -37,7 +37,9 @@ echo [+] Running BeRoot ...
 /usr/bin/python3 BeRoot/Linux/beroot.py | tee output/beroot
 
 echo [+] Running unix-privesc-check
-./upc.sh > output/upc
+cd unix-privesc-check
+./upc.sh > ../output/upc
+cd ..
 
 echo [+] Running sudokiller ...
 ./sudokiller.sh -s | tee output/sudokiller
