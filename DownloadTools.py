@@ -132,7 +132,7 @@ os.system("wget https://github.com/carlospolop/PEASS-ng/releases/download/refs%2
 print("[>] Getting mimikatz ...")
 os.mkdir("tmp")
 os.chdir("tmp")
-os.system("wget https://github.com/gentilkiwi/mimikatz/releases/download/2.2.0-20210810-2/mimikatz_trunk.zip -O mimikatz.zip")
+os.system("wget https://github.com/gentilkiwi/mimikatz/releases/download/2.2.0-20210810-2/mimikatz_trunk.zip --quiet -O mimikatz.zip")
 os.system("unzip mimikatz.zip")
 os.system("rm mimikatz.zip")
 os.chdir("..")

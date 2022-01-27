@@ -17,7 +17,12 @@ mkdir ~/Tools && cd ~/Tools && curl https://raw.githubusercontent.com/manesec/to
 **Total `3.9GByte` in `~/Tools` .**
 
 ```bash
-
+149M    ./Tools
+2.4G    ./Wordlists
+407M    ./Windows
+37M     ./Linux
+906M    ./Additions
+3.9G    .
 ```
 
 ## Include Tools
