@@ -7,10 +7,10 @@ Version: 0.1.1
 **Just run it :**
 
 ```bash
-mkdir ~/Tools && cd ~/Tools && curl https://raw.githubusercontent.com/manesec/tools4me/main/DownloadTools.py | python3
+rm -rf ~/Tools; mkdir ~/Tools && cd ~/Tools && curl https://raw.githubusercontent.com/manesec/tools4me/main/DownloadTools.py | python3
 ```
 
-**If you need to update the tools just remove `~/Tools` and run it again!**
+**If you need to update the tools just run it again!**
 
 ## Test on
 
