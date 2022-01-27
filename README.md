@@ -1,6 +1,9 @@
 # tools4me
- Some useful tools make by mane.
 
-``` bash
-pip install requests
+Quick to install tools on kali linux system.
+
+Just run it :
+
+```bash
+mkdir ~/Tools && cd ~/Tools && curl https://raw.githubusercontent.com/manesec/tools4me/main/DownloadTools.py | python3
 ```

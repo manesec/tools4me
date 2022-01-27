@@ -24,11 +24,11 @@ os.mkdir("Tools")
 os.mkdir("Additions")
 os.mkdir("Wordlists")
 
-print(" :: Apt pre install ::")
+print(" :: Apt pre-install ::")
 os.system("sudo apt update && sudo apt -y install python3-pip neo4j gobuster zaproxy hashcat")
 
 print("---------------------------------------------------------------")
-print(" :: Updating explotDB ::")
+print(" :: Updating ExplotDB ::")
 os.system("sudo apt update && sudo apt -y install exploitdb && sudo searchsploit -u")
 
 print("---------------------------------------------------------------")
