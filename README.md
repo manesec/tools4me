@@ -12,6 +12,14 @@ mkdir ~/Tools && cd ~/Tools && curl https://raw.githubusercontent.com/manesec/to
 
 **If you need to update the tools just remove `~/Tools` and run it again!**
 
+## Size
+
+**Total `3.9GByte` in `~/Tools` .**
+
+```bash
+
+```
+
 ## Include Tools
 
 **Command Tools**
@@ -27,6 +35,8 @@ mkdir ~/Tools && cd ~/Tools && curl https://raw.githubusercontent.com/manesec/to
 + [neo4j](https://neo4j.com/)
 
 + [exploitdb full version](https://www.exploit-db.com/)
+
++ [nikto](https://github.com/sullo/nikto)
 
 **Linux**
 
@@ -55,6 +65,8 @@ mkdir ~/Tools && cd ~/Tools && curl https://raw.githubusercontent.com/manesec/to
 + [WinPEAS](https://github.com/carlospolop/PEASS-ng/tree/master/winPEAS)
 
 + [PowerSploit](https://github.com/PowerShellMafia/PowerSploit): dev and master
+
++ [mimikatz](https://github.com/gentilkiwi/mimikatz)
 
 **WordLists**
 

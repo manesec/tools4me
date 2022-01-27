@@ -25,7 +25,7 @@ os.mkdir("Additions")
 os.mkdir("Wordlists")
 
 print(" :: Apt pre-install ::")
-os.system("sudo apt update && sudo apt -y install python3-pip neo4j gobuster zaproxy hashcat")
+os.system("sudo apt update && sudo apt -y install python3-pip neo4j gobuster zaproxy hashcat nikto")
 
 print("---------------------------------------------------------------")
 print(" :: Updating ExplotDB ::")
@@ -129,6 +129,14 @@ os.system("wget https://github.com/carlospolop/PEASS-ng/releases/download/refs%2
 os.system("wget https://github.com/carlospolop/PEASS-ng/releases/download/refs%2Fpull%2F260%2Fmerge/winPEASx86.exe --quiet -O Windows/winPEASx86.exe")
 os.system("wget https://github.com/carlospolop/PEASS-ng/releases/download/refs%2Fpull%2F260%2Fmerge/winPEASx86_ofs.exe --quiet -O Windows/winPEASx86_ofs.exe")
 
+print("[>] Getting mimikatz ...")
+os.mkdir("tmp")
+os.chdir("tmp")
+os.system("wget https://github.com/gentilkiwi/mimikatz/releases/download/2.2.0-20210810-2/mimikatz_trunk.zip -O mimikatz.zip")
+os.system("unzip mimikatz.zip")
+os.system("rm mimikatz.zip")
+os.chdir("..")
+os.system("mv tmp Windows/mimikatz")
 
 print("---------------------------------------------------------------")
 print(" :: Installing For Linux Tools ::")
@@ -185,4 +193,7 @@ os.chdir("..")
 print("[>] Getting rockyou.txt ...")
 os.system("wget https://github.com/brannondorsey/naive-hashcat/releases/download/data/rockyou.txt -O Wordlists/rockyou.txt")
 
-print("Done! -- by manesec.")
+
+print("-------------------------- Total ------------------------------")
+os.system("du -h --max-depth=1 .")
+print("\nDone! -- by manesec.")
