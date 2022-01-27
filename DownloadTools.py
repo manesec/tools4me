@@ -7,13 +7,13 @@ print("""
 █    █    ▐   ▐   █    ▐    █    ▐    ▐       █    ▐   █     ▐  
 ▐    ▐            ▐         ▐                 ▐        ▐        
                 Download Tools - Tools4me by Mane.
-                           Version: 0.1
+                           Version: 0.1.1
                 https://github.com/manesec/tools4me
 ---------------------------------------------------------------""")
 import os
 
 # Mkdir 
-os.system("rm -rf Linux")
+os.system("rm -rfy Linux")
 os.system("rm -rf Windows")
 os.system("rm -rf Tools")
 os.system("rm -rf Additions")
@@ -70,6 +70,21 @@ os.system("wget https://raw.githubusercontent.com/21y4d/nmapAutomator/master/nma
 
 print("[>] Getting Godzilla ...")
 os.system("wget https://github.com/BeichenDream/Godzilla/releases/latest/download/godzilla.jar --quiet -O Tools/godzilla.jar")
+
+print("[>] Getting Behinder ...")
+os.mkdir("tmp")
+os.chdir("tmp")
+os.system("wget https://github.com/rebeyond/Behinder/releases/download/Behinder_v3.0_Beta_11_for_tools/Behinder_v3.0_Beta_11.t00ls.zip --quiet -O Behinder.zip")
+os.system("wget https://gluonhq.com/download/javafx-11-0-2-sdk-linux/ --quiet -O javafx.zip")
+os.system("unzip Behinder.zip")
+os.system("unzip javafx.zip")
+os.remove("Behinder.zip")
+os.remove("javafx.zip")
+os.system("mv javafx-sdk-*/lib .")
+os.system("rm -rf javafx-sdk-*")
+os.chdir("..")
+os.system("mv tmp Tools/Behinder")
+
 
 print("---------------------------------------------------------------")
 print(" :: Installing For Windows Tools ::")
@@ -149,6 +164,14 @@ print(" :: Installing Additions Tools ::")
 print("[>] Getting BeRoot ...")
 os.chdir("Additions")
 os.system("git clone https://github.com/AlessandroZ/BeRoot.git")
+os.chdir("..")
+
+print("[>] Getting big Webshell ...")
+os.chdir("Additions")
+os.system("git clone https://github.com/tennc/webshell.git")
+os.chdir("webshell")
+os.system("git submodule update --init --recursive")
+os.chdir("..")
 os.chdir("..")
 
 print("---------------------------------------------------------------")
