@@ -12,6 +12,10 @@ mkdir ~/Tools && cd ~/Tools && curl https://raw.githubusercontent.com/manesec/to
 
 **If you need to update the tools just remove `~/Tools` and run it again!**
 
+## Test on
+
+Kali 2021
+
 ## Size
 
 **Total `3.9GByte` in `~/Tools` .**
