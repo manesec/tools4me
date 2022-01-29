@@ -24,9 +24,6 @@ os.mkdir("Tools")
 os.mkdir("Additions")
 os.mkdir("Wordlists")
 
-print(" :: Pre-config ::")
-os.system("echo '* libraries/restart-without-asking boolean true' | sudo debconf-set-selections")
-
 print(" :: Apt pre-install ::")
 os.system("sudo apt update && sudo apt -y install python3-pip neo4j gobuster zaproxy hashcat nikto")
 

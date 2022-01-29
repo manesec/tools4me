@@ -12,6 +12,12 @@ rm -rf ~/Tools; mkdir ~/Tools && cd ~/Tools && curl https://raw.githubuserconten
 
 **If you need to update the tools just run it again!**
 
+## TODO
+
++ DB View
+
++ firefox pass view
+
 ## Test on
 
 Kali 2021
