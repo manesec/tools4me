@@ -3,17 +3,24 @@ Optional_Installation = {
     # Update ExploitDB
     "EXPLOITDB" : True,
 
+    # Install and Update Go-exploitdb DB
+    "GOEXPLOITDB" : False,
+
     # Install ZAP
     # It have some bug in old kali linux, if you are running old kali linux please disable it.
-    "ZAP" : True,
+    "ZAP" : False,
 
     # Install DBeaver
     "DBEAVER" : True,
 
-    # Install Big Webshell Collection
+    # Install Big Webshell Collection ~ 0.84 GByte
     # I think kali buildin webshell just enough.
     # URL: https://github.com/tennc/webshell.git 
     "BIG_WEBSHELL" : False,
+
+    # Install Dictionary-Of-Pentesting (like seclist) ~ 1.2 GByte
+    "DOP" : False,
+
 }
 
 ####################################################################### 
@@ -28,8 +35,8 @@ print("""
 ▄▀   ▄▀   █   ▄▀  ▄▀   █    ▄▀▄▄▄▄    █▀▀▀    ▄▀▄▄▄▄    ▄▀▄▄▄▄▀ 
 █    █    ▐   ▐   █    ▐    █    ▐    ▐       █    ▐   █     ▐  
 ▐    ▐            ▐         ▐                 ▐        ▐     
-                Download Tools - Tools4me by Mane.
-                           Version: 20220131
+            Download Tools on AMD64 - Tools4me by Mane.
+                           Version: 20220201
                 https://github.com/manesec/tools4me
 ---------------------------------------------------------------""")
 import os
@@ -54,6 +61,12 @@ if Optional_Installation["EXPLOITDB"]:
     print(" :: Updating ExploitDB ::")
     os.system("sudo apt update && sudo apt -y install exploitdb && sudo searchsploit -u")
 
+if Optional_Installation["GOEXPLOITDB"]:
+    print(" :: Setting up go-exploitdb ::") 
+    os.system("sudo apt -y install go-exploitdb")
+    print("[>] Updating go-exploitdb DB ...")
+    os.system("sudo go-exploitdb fetch all")
+
 print("---------------------------------------------------------------")
 if Optional_Installation["ZAP"] : 
     print(" :: Setting up zaproxy ::")
@@ -61,21 +74,21 @@ if Optional_Installation["ZAP"] :
     import pexpect,time
 
     print("[>] Installing all additions ...")
-    zap = pexpect.spawn('zaproxy -addoninstallall -daemon',timeout=60*10)
+    zap = pexpect.spawn('zaproxy -addoninstallall -daemon -port 12345',timeout=60*10)
     zap.expect("ZAP is now listening")
     print(" -  Waiting for 5 second ...")
     time.sleep(5)
     zap.kill(9)
 
     print("[>] Updating all additions ...")
-    zap = pexpect.spawn('zaproxy -addonupdate -daemon',timeout=60*10)
+    zap = pexpect.spawn('zaproxy -addonupdate -daemon -port 12345',timeout=60*10)
     zap.expect("ZAP is now listening")
     print(" -  Waiting for 5 second ...")
     time.sleep(5)
     zap.kill(9)
 
     print("[>] Uninstall Non-compatible additions ...")
-    zap = pexpect.spawn('zaproxy -addonuninstall browserView -daemon',timeout=60*10)
+    zap = pexpect.spawn('zaproxy -addonuninstall browserView -daemon -port 12345',timeout=60*10)
     zap.expect("ZAP is now listening")
     print(" -  Waiting for 5 second ...")
     time.sleep(5)
@@ -132,12 +145,6 @@ os.system("wget https://github.com/ph4ntonn/Stowaway/releases/latest/download/wi
 os.system("wget https://github.com/ph4ntonn/Stowaway/releases/latest/download/windows_x86_agent.exe")
 os.chdir("..")
 os.chdir("..")
-
-print("[>] Getting Firefox_decrypt ...")
-os.chdir("Tools")
-os.system("git clone https://github.com/unode/firefox_decrypt.git Firefox_decrypt")
-os.chdir("..")
-
 
 print("---------------------------------------------------------------")
 print(" :: Installing For Windows Tools ::")
@@ -196,6 +203,24 @@ os.system("rm mimikatz.zip")
 os.chdir("..")
 os.system("mv tmp Windows/Mimikatz")
 
+print("[>] Getting juicy-potato ...")
+os.chdir("Windows")
+os.system("wget https://github.com/ohpe/juicy-potato/releases/latest/download/JuicyPotato.exe --quiet")
+os.chdir("..")
+
+print("[>] Getting Lovely-Potato ...")
+os.chdir("Windows")
+os.system("git clone https://github.com/TsukiCTF/Lovely-Potato.git")
+os.chdir("..")
+
+print("[>] Getting kerbrute ...")
+os.chdir("Windows")
+os.system("git clone https://github.com/TarlogicSecurity/kerbrute")
+os.chdir("kerbrute")
+os.system("pip3 install -r requirements.txt")
+os.chdir("..")
+os.chdir("..")
+
 print("---------------------------------------------------------------")
 print(" :: Installing For Linux Tools ::")
 
@@ -246,8 +271,27 @@ if Optional_Installation["BIG_WEBSHELL"] :
     os.chdir("..")
     os.chdir("..")
 
+print("[>] Getting Hack-browser ...")
+os.chdir("Additions")
+os.mkdir("Hack-browser")
+os.chdir("Hack-browser")
+os.system("wget https://github.com/moonD4rk/HackBrowserData/releases/latest/download/hack-browser-data--linux-amd64.zip --quiet ")
+os.system("wget https://github.com/moonD4rk/HackBrowserData/releases/latest/download/hack-browser-data--linux-386.zip --quiet ")
+os.system("wget https://github.com/moonD4rk/HackBrowserData/releases/latest/download/hack-browser-data--windows-32bit.zip --quiet ")
+os.system("wget https://github.com/moonD4rk/HackBrowserData/releases/latest/download/hack-browser-data--windows-64bit.zip --quiet ")
+os.system("unzip hack-browser-data--linux-amd64.zip")
+os.system("unzip hack-browser-data--linux-386.zip")
+os.system("unzip hack-browser-data--windows-32bit.zip")
+os.system("unzip hack-browser-data--windows-64bit.zip")
+os.remove("hack-browser-data--linux-amd64.zip")
+os.remove("hack-browser-data--linux-386.zip")  
+os.remove("hack-browser-data--windows-32bit.zip")
+os.remove("hack-browser-data--windows-64bit.zip")
+os.chdir("..")
+os.chdir("..")
+
 print("---------------------------------------------------------------")
-print(" :: Installing Word list ::")
+print(" :: Installing Wordlists ::")
 
 print("[>] Getting secLists ...")
 os.chdir("Wordlists")
@@ -257,6 +301,11 @@ os.chdir("..")
 print("[>] Getting rockyou.txt ...")
 os.system("wget https://github.com/brannondorsey/naive-hashcat/releases/download/data/rockyou.txt -O Wordlists/rockyou.txt")
 
+if Optional_Installation["DOP"]:
+    print("[>] Getting Dictionary-Of-Pentesting ...")
+    os.chdir("Wordlists")
+    os.system("git clone https://github.com/insightglacier/Dictionary-Of-Pentesting.git")
+    os.chdir("..")
 
 print("-------------------------- Total ------------------------------")
 os.system("du -h --max-depth=1 .")

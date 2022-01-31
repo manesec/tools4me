@@ -29,11 +29,11 @@ Kali 2021
 **Total `3.1GByte` in `~/Tools` .**
 
 ```bash
-163M    ./Tools
+160M    ./Tools
 2.4G    ./Wordlists
-407M    ./Windows
+408M    ./Windows
 37M     ./Linux
-74M     ./Additions
+96M     ./Additions
 3.1G    .
 ```
 
@@ -47,7 +47,7 @@ When you need to change the optional installation, edit the source before run.
 
 + [pwncat-cs](https://github.com/calebstewart/pwncat)
 
-+ [zaproxy](https://github.com/zaproxy/zaproxy)
++ **Optional**: [zaproxy](https://github.com/zaproxy/zaproxy)
 
 + [gobuster](https://github.com/OJ/gobuster)
 
@@ -60,6 +60,8 @@ When you need to change the optional installation, edit the source before run.
 + [nikto](https://github.com/sullo/nikto)
 
 + [DBeaver](https://dbeaver.io/download/)
+
++ **Optional**: [go-exploitdb](https://github.com/vulsio/go-exploitdb)
 
 **Linux**
 
@@ -91,11 +93,19 @@ When you need to change the optional installation, edit the source before run.
 
 + [mimikatz](https://github.com/gentilkiwi/mimikatz)
 
++ [juicy-potato](https://github.com/ohpe/juicy-potato)
+
++ [Lovely-Potato](https://github.com/TsukiCTF/Lovely-Potato)
+
++ [kerbrute](https://github.com/TarlogicSecurity/kerbrute)
+
 **WordLists**
 
 + [Seclists](https://github.com/danielmiessler/SecLists)
 
 + [Rockyou.txt](https://github.com/brannondorsey/naive-hashcat/releases/download/data/rockyou.txt)
+
++ [Dictionary-Of-Pentesting](https://github.com/insightglacier/Dictionary-Of-Pentesting)
 
 **Tools**
 
@@ -107,9 +117,8 @@ When you need to change the optional installation, edit the source before run.
 
 + [Stowaway](https://github.com/ph4ntonn/Stowaway)
 
-+ [firefox_decrypt](https://github.com/unode/firefox_decrypt)
-
 **Additions**
 
 + [BeRoot](https://github.com/AlessandroZ/BeRoot)
++ [HackBrowserData](https://github.com/moonD4rk/HackBrowserData)
 + **Optional**: [Webshell](https://github.com/tennc/webshell)
