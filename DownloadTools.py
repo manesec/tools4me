@@ -1,7 +1,4 @@
 # List slow update ..
-from sqlalchemy import true
-
-
 Optional_Installation = {
     # Update ExploitDB
     "EXPLOITDB" : True,
