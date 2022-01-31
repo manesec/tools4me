@@ -12,4 +12,6 @@
 
 + **Add**: [firefox_decrypt](https://github.com/unode/firefox_decrypt)
 
++ **Add**: [DBeaver](https://dbeaver.io/download/)
+
 

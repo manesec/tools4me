@@ -57,7 +57,7 @@ When you need to change the optional installation, edit the source before run.
 
 + [nikto](https://github.com/sullo/nikto)
 
-+ - [DBeaver](https://dbeaver.io/download/)
++ [DBeaver](https://dbeaver.io/download/)
 
 **Linux**
 
