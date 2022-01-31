@@ -32,7 +32,7 @@ print("""
 import os
 
 # Mkdir 
-os.system("rm -rfy Linux")
+os.system("rm -rf Linux")
 os.system("rm -rf Windows")
 os.system("rm -rf Tools")
 os.system("rm -rf Additions")
