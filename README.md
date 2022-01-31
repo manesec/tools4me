@@ -105,7 +105,7 @@ When you need to change the optional installation, edit the source before run.
 
 + [Rockyou.txt](https://github.com/brannondorsey/naive-hashcat/releases/download/data/rockyou.txt)
 
-+ [Dictionary-Of-Pentesting](https://github.com/insightglacier/Dictionary-Of-Pentesting)
++ **Optional**: [Dictionary-Of-Pentesting](https://github.com/insightglacier/Dictionary-Of-Pentesting)
 
 **Tools**
 
