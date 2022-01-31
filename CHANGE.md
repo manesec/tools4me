@@ -8,6 +8,8 @@
 
 + **Optional**: ZAP
 
++ **Optional**: Update DB
+
 + **Add**: [Stowaway](https://github.com/ph4ntonn/Stowaway)
 
 + **Add**: [firefox_decrypt](https://github.com/unode/firefox_decrypt)

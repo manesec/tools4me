@@ -2,7 +2,9 @@
 
 Quick to install tools on kali linux system.
 
-Version: 20220131
+Version: 20220131 [Change Log](https://github.com/manesec/tools4me/blob/main/CHANGE.md)
+
+## Install
 
 ```bash
 rm -rf ~/Tools; mkdir ~/Tools && cd ~/Tools && curl https://raw.githubusercontent.com/manesec/tools4me/main/DownloadTools.py | python3
@@ -10,21 +12,29 @@ rm -rf ~/Tools; mkdir ~/Tools && cd ~/Tools && curl https://raw.githubuserconten
 
 **If you need to update the tools just run it again!**
 
+If you want to modify just **download it** in `~/Tools` , **edit it** and **run it**.
+
+```bash
+rm -rf ~/Tools; mkdir ~/Tools && cd ~/Tools && wget https://raw.githubusercontent.com/manesec/tools4me/main/DownloadTools.py
+vim DownloadTools.py
+python3 DownloadTools.py
+```
+
 ## Test on
 
 Kali 2021
 
 ## Size
 
-**Total `3.9GByte` in `~/Tools` .**
+**Total `3.1GByte` in `~/Tools` .**
 
 ```bash
-149M    ./Tools
+163M    ./Tools
 2.4G    ./Wordlists
 407M    ./Windows
 37M     ./Linux
-906M    ./Additions
-3.9G    .
+74M     ./Additions
+3.1G    .
 ```
 
 ## Optional

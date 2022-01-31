@@ -1,4 +1,11 @@
+# List slow update ..
+from sqlalchemy import true
+
+
 Optional_Installation = {
+    # Update ExploitDB
+    "EXPLOITDB" : True,
+
     # Install ZAP
     # It have some bug in old kali linux, if you are running old kali linux please disable it.
     "ZAP" : True,
@@ -6,11 +13,10 @@ Optional_Installation = {
     # Install DBeaver
     "DBEAVER" : True,
 
-    # Install Big Webshell Collection 
+    # Install Big Webshell Collection
+    # I think kali buildin webshell just enough.
     # URL: https://github.com/tennc/webshell.git 
     "BIG_WEBSHELL" : False,
-
-
 }
 
 ####################################################################### 
@@ -47,8 +53,9 @@ print(" :: Apt pre-install ::")
 os.system("sudo apt update && sudo apt -y install python3-pip neo4j gobuster zaproxy hashcat nikto")
 
 print("---------------------------------------------------------------")
-print(" :: Updating ExplotDB ::")
-os.system("sudo apt update && sudo apt -y install exploitdb && sudo searchsploit -u")
+if Optional_Installation["EXPLOITDB"]:
+    print(" :: Updating ExploitDB ::")
+    os.system("sudo apt update && sudo apt -y install exploitdb && sudo searchsploit -u")
 
 print("---------------------------------------------------------------")
 if Optional_Installation["ZAP"] : 
@@ -81,7 +88,7 @@ if Optional_Installation["DBEAVER"]:
     print(" :: Setting up DBeaver ::")
     os.mkdir("tmp")
     os.chdir("tmp")
-    os.system("wget https://github.com/dbeaver/dbeaver/releases/download/21.3.3/dbeaver-ce_21.3.3_amd64.deb --quiet O dbeaver.deb")
+    os.system("wget https://github.com/dbeaver/dbeaver/releases/download/21.3.3/dbeaver-ce_21.3.3_amd64.deb -O dbeaver.deb")
     os.system("sudo dpkg -i dbeaver.deb")
     os.chdir("..")
     os.system("rm -rf tmp")
@@ -151,25 +158,25 @@ os.system("git clone https://github.com/PowerShellMafia/PowerSploit.git PowerSol
 os.system("git clone https://github.com/PowerShellMafia/PowerSploit.git PowerSoloit_master -b master")
 os.chdir("..")
 
-print("[>] Getting evil-winrm ...")
+print("[>] Getting Evil-winrm ...")
 os.chdir("Windows")
-os.system("git clone https://github.com/Hackplayers/evil-winrm.git")
+os.system("git clone https://github.com/Hackplayers/evil-winrm.git Evil-winrm")
 os.chdir("..")
 
-print("[>] Getting nishang ...")
+print("[>] Getting Nishang ...")
 os.chdir("Windows")
-os.system("git clone https://github.com/samratashok/nishang.git")
+os.system("git clone https://github.com/samratashok/nishang.git Nishang")
 os.chdir("..")
 
-print("[>] Getting python impacket ...")
+print("[>] Getting python Impacket ...")
 os.chdir("Windows")
-os.system("git clone https://github.com/SecureAuthCorp/impacket.git")
-os.chdir("impacket")
+os.system("git clone https://github.com/SecureAuthCorp/impacket.git Impacket")
+os.chdir("Impacket")
 os.system("pip3 install .")
 os.chdir("..")
 os.chdir("..")
 
-print("[>] Getting winPEAS ...")
+print("[>] Getting WinPEAS ...")
 os.chdir("Windows")
 os.mkdir("WinPEAS")
 os.chdir("WinPEAS")
@@ -183,7 +190,7 @@ os.system("wget https://github.com/carlospolop/PEASS-ng/releases/latest/download
 os.chdir("..")
 os.chdir("..")
 
-print("[>] Getting mimikatz ...")
+print("[>] Getting Mimikatz ...")
 os.mkdir("tmp")
 os.chdir("tmp")
 os.system("wget https://github.com/gentilkiwi/mimikatz/releases/latest/download/mimikatz_trunk.zip --quiet -O mimikatz.zip")
@@ -217,12 +224,12 @@ os.system("wget https://raw.githubusercontent.com/rebootuser/LinEnum/master/LinE
 
 print("[>] Getting unix-privesc-check ...")
 os.chdir("Linux")
-os.system("git clone https://github.com/pentestmonkey/unix-privesc-check.git")
+os.system("git clone https://github.com/pentestmonkey/unix-privesc-check.git Unix-privesc-check")
 os.chdir("..")
 
 print("[>] Getting SUDO_KILLER ...")
 os.chdir("Linux")
-os.system("git clone https://github.com/TH3xACE/SUDO_KILLER.git")
+os.system("git clone https://github.com/TH3xACE/SUDO_KILLER.git Sudo_Killer")
 os.chdir("..")
 
 print("---------------------------------------------------------------")
