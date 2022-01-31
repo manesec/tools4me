@@ -2,17 +2,13 @@
 
 Quick to install tools on kali linux system.
 
-Version: 0.1.1
-
-**Just run it :**
+Version: 20220131
 
 ```bash
 rm -rf ~/Tools; mkdir ~/Tools && cd ~/Tools && curl https://raw.githubusercontent.com/manesec/tools4me/main/DownloadTools.py | python3
 ```
 
 **If you need to update the tools just run it again!**
-
-
 
 ## Test on
 
