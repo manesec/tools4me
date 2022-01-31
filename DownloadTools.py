@@ -1,3 +1,22 @@
+Optional_Installation = {
+    # Install ZAP
+    # It have some bug in old kali linux, if you are running old kali linux please disable it.
+    "ZAP" : True,
+
+    # Install DBeaver
+    "DBEAVER" : True,
+
+    # Install Big Webshell Collection 
+    # URL: https://github.com/tennc/webshell.git 
+    "BIG_WEBSHELL" : False,
+
+
+}
+
+####################################################################### 
+################################# END ################################# 
+####################################################################### 
+
 print("""
  ▄▀▀▄ ▄▀▄  ▄▀▀█▄   ▄▀▀▄ ▀▄  ▄▀▀█▄▄▄▄  ▄▀▀▀▀▄  ▄▀▀█▄▄▄▄  ▄▀▄▄▄▄  
 █  █ ▀  █ ▐ ▄▀ ▀▄ █  █ █ █ ▐  ▄▀   ▐ █ █   ▐ ▐  ▄▀   ▐ █ █    ▌ 
@@ -5,15 +24,15 @@ print("""
   █    █   ▄▀   █   █   █    █    ▌  ▀▄   █    █    ▌    █      
 ▄▀   ▄▀   █   ▄▀  ▄▀   █    ▄▀▄▄▄▄    █▀▀▀    ▄▀▄▄▄▄    ▄▀▄▄▄▄▀ 
 █    █    ▐   ▐   █    ▐    █    ▐    ▐       █    ▐   █     ▐  
-▐    ▐            ▐         ▐                 ▐        ▐        
+▐    ▐            ▐         ▐                 ▐        ▐     
                 Download Tools - Tools4me by Mane.
-                           Version: 0.1.1
+                           Version: 20220131
                 https://github.com/manesec/tools4me
 ---------------------------------------------------------------""")
 import os
 
 # Mkdir 
-os.system("rm -rf Linux")
+os.system("rm -rfy Linux")
 os.system("rm -rf Windows")
 os.system("rm -rf Tools")
 os.system("rm -rf Additions")
@@ -24,9 +43,6 @@ os.mkdir("Tools")
 os.mkdir("Additions")
 os.mkdir("Wordlists")
 
-print(" :: Pre-config ::")
-os.system("echo '* libraries/restart-without-asking boolean true' | sudo debconf-set-selections")
-
 print(" :: Apt pre-install ::")
 os.system("sudo apt update && sudo apt -y install python3-pip neo4j gobuster zaproxy hashcat nikto")
 
@@ -35,31 +51,41 @@ print(" :: Updating ExplotDB ::")
 os.system("sudo apt update && sudo apt -y install exploitdb && sudo searchsploit -u")
 
 print("---------------------------------------------------------------")
-print(" :: Setting up zaproxy ::")
-print("[!] Set up for zaproxy it need to take a long time.")
-import pexpect,time
+if Optional_Installation["ZAP"] : 
+    print(" :: Setting up zaproxy ::")
+    print("[!] Set up for zaproxy it need to take a long time.")
+    import pexpect,time
 
-print("[>] Installing all additions ...")
-zap = pexpect.spawn('zaproxy -addoninstallall -daemon',timeout=60*10)
-zap.expect("ZAP is now listening")
-print(" -  Waiting for 5 second ...")
-time.sleep(5)
-zap.kill(9)
+    print("[>] Installing all additions ...")
+    zap = pexpect.spawn('zaproxy -addoninstallall -daemon',timeout=60*10)
+    zap.expect("ZAP is now listening")
+    print(" -  Waiting for 5 second ...")
+    time.sleep(5)
+    zap.kill(9)
 
-print("[>] Updating all additions ...")
-zap = pexpect.spawn('zaproxy -addonupdate -daemon',timeout=60*10)
-zap.expect("ZAP is now listening")
-print(" -  Waiting for 5 second ...")
-time.sleep(5)
-zap.kill(9)
+    print("[>] Updating all additions ...")
+    zap = pexpect.spawn('zaproxy -addonupdate -daemon',timeout=60*10)
+    zap.expect("ZAP is now listening")
+    print(" -  Waiting for 5 second ...")
+    time.sleep(5)
+    zap.kill(9)
 
-print("[>] Uninstall Non-compatible additions ...")
-zap = pexpect.spawn('zaproxy -addonuninstall browserView -daemon',timeout=60*10)
-zap.expect("ZAP is now listening")
-print(" -  Waiting for 5 second ...")
-time.sleep(5)
-zap.kill(9)
+    print("[>] Uninstall Non-compatible additions ...")
+    zap = pexpect.spawn('zaproxy -addonuninstall browserView -daemon',timeout=60*10)
+    zap.expect("ZAP is now listening")
+    print(" -  Waiting for 5 second ...")
+    time.sleep(5)
+    zap.kill(9)
 
+if Optional_Installation["DBEAVER"]:
+    print(" :: Setting up DBeaver ::")
+    os.mkdir("tmp")
+    os.chdir("tmp")
+    os.system("wget https://github.com/dbeaver/dbeaver/releases/download/21.3.3/dbeaver-ce_21.3.3_amd64.deb --quiet O dbeaver.deb")
+    os.system("sudo dpkg -i dbeaver.deb")
+    os.chdir("..")
+    os.system("rm -rf tmp")
+    
 print("---------------------------------------------------------------")
 print(" :: pip pre install ::")
 print("[>] Getting pwncat-cs ...")
@@ -88,13 +114,33 @@ os.system("rm -rf javafx-sdk-*")
 os.chdir("..")
 os.system("mv tmp Tools/Behinder")
 
+print("[>] Getting Stowaway ...")
+os.chdir("Tools")
+os.mkdir("Stowaway")
+os.chdir("Stowaway")
+os.system("wget https://github.com/ph4ntonn/Stowaway/releases/latest/download/linux_x64_admin")
+os.system("wget https://github.com/ph4ntonn/Stowaway/releases/latest/download/linux_x64_agent")
+os.system("wget https://github.com/ph4ntonn/Stowaway/releases/latest/download/linux_x86_admin")
+os.system("wget https://github.com/ph4ntonn/Stowaway/releases/latest/download/linux_x86_agent")
+os.system("wget https://github.com/ph4ntonn/Stowaway/releases/latest/download/windows_x64_admin.exe")
+os.system("wget https://github.com/ph4ntonn/Stowaway/releases/latest/download/windows_x64_agent.exe")
+os.system("wget https://github.com/ph4ntonn/Stowaway/releases/latest/download/windows_x86_admin.exe")
+os.system("wget https://github.com/ph4ntonn/Stowaway/releases/latest/download/windows_x86_agent.exe")
+os.chdir("..")
+os.chdir("..")
+
+print("[>] Getting Firefox_decrypt ...")
+os.chdir("Tools")
+os.system("git clone https://github.com/unode/firefox_decrypt.git Firefox_decrypt")
+os.chdir("..")
+
 
 print("---------------------------------------------------------------")
 print(" :: Installing For Windows Tools ::")
 
 print("[>] Getting BloodHound ...")
 os.chdir("Windows")
-os.system("wget https://github.com/BloodHoundAD/BloodHound/releases/download/4.0.3/BloodHound-linux-x64.zip -O BloodHound-linux-x64.zip")
+os.system("wget https://github.com/BloodHoundAD/BloodHound/releases/latest/download/BloodHound-linux-x64.zip -O BloodHound-linux-x64.zip")
 os.system("unzip BloodHound-linux-x64.zip")
 os.system("rm -rf BloodHound-linux-x64.zip")
 os.chdir("..")
@@ -124,31 +170,41 @@ os.chdir("..")
 os.chdir("..")
 
 print("[>] Getting winPEAS ...")
-os.system("wget https://github.com/carlospolop/PEASS-ng/releases/download/refs%2Fpull%2F260%2Fmerge/winPEAS.bat --quiet -O Windows/winPEAS.bat")
-os.system("wget https://github.com/carlospolop/PEASS-ng/releases/download/refs%2Fpull%2F260%2Fmerge/winPEASany.exe  --quiet -O Windows/winPEASany.exe")
-os.system("wget https://github.com/carlospolop/PEASS-ng/releases/download/refs%2Fpull%2F260%2Fmerge/winPEASany_ofs.exe --quiet -O Windows/winPEASany_ofs.exe")
-os.system("wget https://github.com/carlospolop/PEASS-ng/releases/download/refs%2Fpull%2F260%2Fmerge/winPEASx64.exe --quiet -O Windows/winPEASx64.exe")
-os.system("wget https://github.com/carlospolop/PEASS-ng/releases/download/refs%2Fpull%2F260%2Fmerge/winPEASx64_ofs.exe --quiet -O Windows/winPEASx64_ofs.exe")
-os.system("wget https://github.com/carlospolop/PEASS-ng/releases/download/refs%2Fpull%2F260%2Fmerge/winPEASx86.exe --quiet -O Windows/winPEASx86.exe")
-os.system("wget https://github.com/carlospolop/PEASS-ng/releases/download/refs%2Fpull%2F260%2Fmerge/winPEASx86_ofs.exe --quiet -O Windows/winPEASx86_ofs.exe")
+os.chdir("Windows")
+os.mkdir("WinPEAS")
+os.chdir("WinPEAS")
+os.system("wget https://github.com/carlospolop/PEASS-ng/releases/latest/download/winPEAS.bat --quiet -O winPEAS.bat")
+os.system("wget https://github.com/carlospolop/PEASS-ng/releases/latest/download/winPEASany.exe  --quiet -O winPEASany.exe")
+os.system("wget https://github.com/carlospolop/PEASS-ng/releases/latest/download/winPEASany_ofs.exe --quiet -O winPEASany_ofs.exe")
+os.system("wget https://github.com/carlospolop/PEASS-ng/releases/latest/download/winPEASx64.exe --quiet -O winPEASx64.exe")
+os.system("wget https://github.com/carlospolop/PEASS-ng/releases/latest/download/winPEASx64_ofs.exe --quiet -O winPEASx64_ofs.exe")
+os.system("wget https://github.com/carlospolop/PEASS-ng/releases/latest/download/winPEASx86.exe --quiet -O winPEASx86.exe")
+os.system("wget https://github.com/carlospolop/PEASS-ng/releases/latest/download/winPEASx86_ofs.exe --quiet -O winPEASx86_ofs.exe")
+os.chdir("..")
+os.chdir("..")
 
 print("[>] Getting mimikatz ...")
 os.mkdir("tmp")
 os.chdir("tmp")
-os.system("wget https://github.com/gentilkiwi/mimikatz/releases/download/2.2.0-20210810-2/mimikatz_trunk.zip --quiet -O mimikatz.zip")
+os.system("wget https://github.com/gentilkiwi/mimikatz/releases/latest/download/mimikatz_trunk.zip --quiet -O mimikatz.zip")
 os.system("unzip mimikatz.zip")
 os.system("rm mimikatz.zip")
 os.chdir("..")
-os.system("mv tmp Windows/mimikatz")
+os.system("mv tmp Windows/Mimikatz")
 
 print("---------------------------------------------------------------")
 print(" :: Installing For Linux Tools ::")
 
 print("[>] Getting pspy ...")
-os.system("wget https://github.com/DominicBreuker/pspy/releases/download/v1.2.0/pspy32 --quiet -O Linux/pspy32")
-os.system("wget https://github.com/DominicBreuker/pspy/releases/download/v1.2.0/pspy64 --quiet -O Linux/pspy64")
-os.system("wget https://github.com/DominicBreuker/pspy/releases/download/v1.2.0/pspy32s --quiet -O Linux/pspy32s")
-os.system("wget https://github.com/DominicBreuker/pspy/releases/download/v1.2.0/pspy64s --quiet -O Linux/pspy64s")
+os.chdir("Linux")
+os.mkdir("Pspy")
+os.chdir("Pspy")
+os.system("wget https://github.com/DominicBreuker/pspy/releases/latest/download/pspy32 --quiet -O pspy32")
+os.system("wget https://github.com/DominicBreuker/pspy/releases/latest/download/pspy64 --quiet -O pspy64")
+os.system("wget https://github.com/DominicBreuker/pspy/releases/latest/download/pspy32s --quiet -O pspy32s")
+os.system("wget https://github.com/DominicBreuker/pspy/releases/latest/download/pspy64s --quiet -O pspy64s")
+os.chdir("..")
+os.chdir("..")
 
 print("[>] Getting LinPEAS ...")
 os.system("wget https://github.com/carlospolop/PEASS-ng/releases/latest/download/linpeas.sh --quiet -O Linux/linpeas.sh")
@@ -177,13 +233,14 @@ os.chdir("Additions")
 os.system("git clone https://github.com/AlessandroZ/BeRoot.git")
 os.chdir("..")
 
-print("[>] Getting big Webshell ...")
-os.chdir("Additions")
-os.system("git clone https://github.com/tennc/webshell.git")
-os.chdir("webshell")
-os.system("git submodule update --init --recursive")
-os.chdir("..")
-os.chdir("..")
+if Optional_Installation["BIG_WEBSHELL"] :
+    print("[>] Getting Big Webshell Collection ...")
+    os.chdir("Additions")
+    os.system("git clone https://github.com/tennc/webshell.git")
+    os.chdir("webshell")
+    os.system("git submodule update --init --recursive")
+    os.chdir("..")
+    os.chdir("..")
 
 print("---------------------------------------------------------------")
 print(" :: Installing Word list ::")

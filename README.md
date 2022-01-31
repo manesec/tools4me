@@ -35,6 +35,10 @@ Kali 2021
 3.9G    .
 ```
 
+## Optional
+
+When you need to change the optional installation, edit the source before run. 
+
 ## Include Tools
 
 **Command Tools**
@@ -52,6 +56,8 @@ Kali 2021
 + [exploitdb full version](https://www.exploit-db.com/)
 
 + [nikto](https://github.com/sullo/nikto)
+
++ - [DBeaver](https://dbeaver.io/download/)
 
 **Linux**
 
@@ -97,7 +103,11 @@ Kali 2021
 
 + [Behinder](https://github.com/rebeyond/Behinder)
 
++ [Stowaway](https://github.com/ph4ntonn/Stowaway)
+
++ [firefox_decrypt](https://github.com/unode/firefox_decrypt)
+
 **Additions**
 
 + [BeRoot](https://github.com/AlessandroZ/BeRoot)
-+ [Webshell](https://github.com/tennc/webshell)
++ **Optional**: [Webshell](https://github.com/tennc/webshell)
