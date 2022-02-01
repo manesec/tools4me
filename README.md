@@ -117,8 +117,12 @@ When you need to change the optional installation, edit the source before run.
 
 + [Stowaway](https://github.com/ph4ntonn/Stowaway)
 
++ [tools4mane](https://github.com/manesec/tools4mane)
+
 **Additions**
 
 + [BeRoot](https://github.com/AlessandroZ/BeRoot)
+
 + [HackBrowserData](https://github.com/moonD4rk/HackBrowserData)
+
 + **Optional**: [Webshell](https://github.com/tennc/webshell)

@@ -9,6 +9,7 @@
 + **Add**: [kerbrute](https://github.com/TarlogicSecurity/kerbrute)
 + **Add Optional**: [Dictionary-Of-Pentesting](https://github.com/insightglacier/Dictionary-Of-Pentesting)
 + **Fix**: Bug for ZAP stop working where `geckodriver` is running.
++ **Add**: [tools4mane](https://github.com/manesec/tools4mane)
 
 ## Update Version: 20220131
 
