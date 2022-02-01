@@ -112,7 +112,7 @@ print("---------------------------------------------------------------")
 print(" :: Installing Tools ::")
 
 print("[>] Getting tools4mane ...")
-os.system("git clone https://github.com/manesec/tools4mane.git")
+os.system("git clone https://github.com/manesec/tools4mane.git Tools4mane")
 
 print("[>] Getting nmapAutomator ...")
 os.system("wget https://raw.githubusercontent.com/21y4d/nmapAutomator/master/nmapAutomator.sh --quiet -O Tools/nmapAutomator.sh")
