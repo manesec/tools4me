@@ -2,7 +2,7 @@
 
 Quick to install tools on kali linux system.
 
-Version: 20220131 [Change Log](https://github.com/manesec/tools4me/blob/main/CHANGE.md)
+[Change Log](https://github.com/manesec/tools4me/blob/main/CHANGE.md)
 
 ## Install
 
