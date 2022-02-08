@@ -26,15 +26,16 @@ Kali 2021
 
 ## Size
 
-**Total `3.1GByte` in `~/Tools` .**
+**Total `3.5 GByte` in `~/Tools` .**
 
 ```bash
-160M    ./Tools
-2.4G    ./Wordlists
-408M    ./Windows
+240K    ./Tools4mane
+179M    ./Tools
+2.5G    ./Wordlists
+785M    ./Windows
 37M     ./Linux
 96M     ./Additions
-3.1G    .
+3.5G    .
 ```
 
 ## Optional
