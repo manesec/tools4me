@@ -36,7 +36,7 @@ print("""
 █    █    ▐   ▐   █    ▐    █    ▐    ▐       █    ▐   █     ▐  
 ▐    ▐            ▐         ▐                 ▐        ▐     
             Download Tools on AMD64 - Tools4me by Mane.
-                           Version: 20220201
+                           Version: 20220209
                 https://github.com/manesec/tools4me
 ---------------------------------------------------------------""")
 import os
@@ -134,18 +134,15 @@ os.system("rm -rf javafx-sdk-*")
 os.chdir("..")
 os.system("mv tmp Tools/Behinder")
 
-print("[>] Getting Stowaway ...")
+print("[>] Getting Chisel ...")
 os.chdir("Tools")
-os.mkdir("Stowaway")
-os.chdir("Stowaway")
-os.system("wget https://github.com/ph4ntonn/Stowaway/releases/latest/download/linux_x64_admin")
-os.system("wget https://github.com/ph4ntonn/Stowaway/releases/latest/download/linux_x64_agent")
-os.system("wget https://github.com/ph4ntonn/Stowaway/releases/latest/download/linux_x86_admin")
-os.system("wget https://github.com/ph4ntonn/Stowaway/releases/latest/download/linux_x86_agent")
-os.system("wget https://github.com/ph4ntonn/Stowaway/releases/latest/download/windows_x64_admin.exe")
-os.system("wget https://github.com/ph4ntonn/Stowaway/releases/latest/download/windows_x64_agent.exe")
-os.system("wget https://github.com/ph4ntonn/Stowaway/releases/latest/download/windows_x86_admin.exe")
-os.system("wget https://github.com/ph4ntonn/Stowaway/releases/latest/download/windows_x86_agent.exe")
+os.mkdir("Chisel")
+os.chdir("Chisel")
+os.system("wget https://github.com/jpillora/chisel/releases/latest/download/chisel_1.7.7_linux_386.gz --quiet -O chisel_linux_386.gz")
+os.system("wget https://github.com/jpillora/chisel/releases/latest/download/chisel_1.7.7_linux_amd64.gz --quiet -O chisel_linux_amd64.gz")
+os.system("wget https://github.com/jpillora/chisel/releases/latest/download/chisel_1.7.7_windows_386.gz --quiet -O chisel_windows_386.gz")
+os.system("wget https://github.com/jpillora/chisel/releases/latest/download/chisel_1.7.7_windows_amd64.gz --quiet -O chisel_windows_amd64.gz")
+os.system("gzip -d *.gz")
 os.chdir("..")
 os.chdir("..")
 
@@ -223,6 +220,23 @@ os.chdir("kerbrute")
 os.system("pip3 install -r requirements.txt")
 os.chdir("..")
 os.chdir("..")
+
+print("[>] Getting Sharp Collection ...")
+os.chdir("Windows")
+os.system("git clone https://github.com/Flangvik/SharpCollection.git SharpCollection")
+os.chdir("..")
+
+print("[>] Getting Sharp ADModule ...")
+os.chdir("Windows")
+os.system("git clone https://github.com/samratashok/ADModule.git ADModule")
+os.chdir("..")
+
+print("[>] Getting ADCS.ps1 ...")
+os.chdir("Windows")
+os.system("curl https://raw.githubusercontent.com/cfalta/PoshADCS/master/ADCS.ps1 -O ADCS.ps1")
+os.chdir("..")
+
+
 
 print("---------------------------------------------------------------")
 print(" :: Installing For Linux Tools ::")

@@ -99,6 +99,12 @@ When you need to change the optional installation, edit the source before run.
 
 + [kerbrute](https://github.com/TarlogicSecurity/kerbrute)
 
++ [PoshADCS](https://github.com/cfalta/PoshADCS)
+
++ [ADModule](https://github.com/samratashok/ADModule)
+
++ [SharpCollection](https://github.com/Flangvik/SharpCollection)
+
 **WordLists**
 
 + [Seclists](https://github.com/danielmiessler/SecLists)
@@ -115,7 +121,7 @@ When you need to change the optional installation, edit the source before run.
 
 + [Behinder](https://github.com/rebeyond/Behinder)
 
-+ [Stowaway](https://github.com/ph4ntonn/Stowaway)
++ [Chisel](https://github.com/jpillora/chisel)
 
 + [tools4mane](https://github.com/manesec/tools4mane)
 
