@@ -36,7 +36,7 @@ print("""
 █    █    ▐   ▐   █    ▐    █    ▐    ▐       █    ▐   █     ▐  
 ▐    ▐            ▐         ▐                 ▐        ▐     
             Download Tools on AMD64 - Tools4me by Mane.
-                           Version: 20220209
+                           Version: 20200211
                 https://github.com/manesec/tools4me
 ---------------------------------------------------------------""")
 import os
@@ -165,6 +165,7 @@ os.chdir("..")
 print("[>] Getting Evil-winrm ...")
 os.chdir("Windows")
 os.system("git clone https://github.com/Hackplayers/evil-winrm.git Evil-winrm")
+os.system("sudo gem install evil-winrm")
 os.chdir("..")
 
 print("[>] Getting Nishang ...")
