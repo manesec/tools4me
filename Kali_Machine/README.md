@@ -54,7 +54,6 @@ When you need to change the optional installation, edit the source before run.
 + [exploitdb full version](https://www.exploit-db.com/)
 + [nikto](https://github.com/sullo/nikto)
 + [DBeaver](https://dbeaver.io/download/)
-+ 
 
 **Linux**
 
