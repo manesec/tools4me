@@ -3,9 +3,6 @@ Optional_Installation = {
     # Update ExploitDB
     "EXPLOITDB" : True,
 
-    # Install and Update Go-exploitdb DB
-    "GOEXPLOITDB" : False,
-
     # Install ZAP
     # It have some bug in old kali linux, if you are running old kali linux please disable it.
     "ZAP" : False,
@@ -36,7 +33,7 @@ print("""
 █    █    ▐   ▐   █    ▐    █    ▐    ▐       █    ▐   █     ▐  
 ▐    ▐            ▐         ▐                 ▐        ▐     
             Download Tools on AMD64 - Tools4me by Mane.
-                           Version: 20200211
+                           Version: 20220214
                 https://github.com/manesec/tools4me
 ---------------------------------------------------------------""")
 import os
@@ -60,12 +57,6 @@ print("---------------------------------------------------------------")
 if Optional_Installation["EXPLOITDB"]:
     print(" :: Updating ExploitDB ::")
     os.system("sudo apt update && sudo apt -y install exploitdb && sudo searchsploit -u")
-
-if Optional_Installation["GOEXPLOITDB"]:
-    print(" :: Setting up go-exploitdb ::") 
-    os.system("sudo apt -y install go-exploitdb")
-    print("[>] Updating go-exploitdb DB ...")
-    os.system("sudo go-exploitdb fetch all")
 
 print("---------------------------------------------------------------")
 if Optional_Installation["ZAP"] : 

@@ -7,7 +7,7 @@ Quick to install tools on kali linux system for **attack machine** only.
 ## Install
 
 ```bash
-rm -rf ~/Tools; mkdir ~/Tools && cd ~/Tools && curl https://raw.githubusercontent.com/manesec/tools4me/main/DownloadTools.py | python3
+rm -rf ~/Tools; mkdir ~/Tools && cd ~/Tools && curl https://raw.githubusercontent.com/manesec/tools4me/main/Kali_Machine/DownloadTools.py | python3
 ```
 
 **If you need to update the tools just run it again!**
@@ -15,7 +15,7 @@ rm -rf ~/Tools; mkdir ~/Tools && cd ~/Tools && curl https://raw.githubuserconten
 If you want to modify just **download it** in `~/Tools` , **edit it** and **run it**.
 
 ```bash
-rm -rf ~/Tools; mkdir ~/Tools && cd ~/Tools && wget https://raw.githubusercontent.com/manesec/tools4me/main/DownloadTools.py
+rm -rf ~/Tools; mkdir ~/Tools && cd ~/Tools && wget https://raw.githubusercontent.com/manesec/tools4me/main/Kali_Machine/DownloadTools.py
 vim DownloadTools.py
 python3 DownloadTools.py
 ```
@@ -54,7 +54,7 @@ When you need to change the optional installation, edit the source before run.
 + [exploitdb full version](https://www.exploit-db.com/)
 + [nikto](https://github.com/sullo/nikto)
 + [DBeaver](https://dbeaver.io/download/)
-+ **Optional**: [go-exploitdb](https://github.com/vulsio/go-exploitdb)
++ 
 
 **Linux**
 

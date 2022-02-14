@@ -1,5 +1,8 @@
 # Change log
 
+## Update Version: 20220214
+
++ **Remove**: [go-exploitdb](https://github.com/vulsio/go-exploitdb)
 
 ## Update Version: 20220209
 
