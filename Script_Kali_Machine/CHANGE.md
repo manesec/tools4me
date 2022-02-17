@@ -1,5 +1,10 @@
 # Change log
 
+## Update Version: 20220217
+
++ **Add**: [NetSPI PowerShell](https://github.com/NetSPI/PowerShell)
++ **Add**: [SharpView](https://github.com/tevora-threat/SharpView)
+
 ## Update Version: 20220214
 
 + **Remove**: [go-exploitdb](https://github.com/vulsio/go-exploitdb)

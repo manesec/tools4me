@@ -1,13 +1,13 @@
-# tools4me for kali linux machine
+# Script: tools4me for kali linux to machine
 
 Quick to install tools on kali linux system for **attack machine** only.
 
-[Change Log](https://github.com/manesec/tools4me/blob/main/Kali_Machine/CHANGE.md)
+[Change Log](https://github.com/manesec/tools4me/blob/main/Script_Kali_Machine/CHANGE.md)
 
 ## Install
 
 ```bash
-rm -rf ~/Tools; mkdir ~/Tools && cd ~/Tools && curl https://raw.githubusercontent.com/manesec/tools4me/main/Kali_Machine/DownloadTools.py | python3
+rm -rf ~/MachineTools; mkdir ~/MachineTools && cd ~/MachineTools && curl https://raw.githubusercontent.com/manesec/tools4me/main/Script_Kali_Machine/DownloadTools.py | python3
 ```
 
 **If you need to update the tools just run it again!**
@@ -15,10 +15,12 @@ rm -rf ~/Tools; mkdir ~/Tools && cd ~/Tools && curl https://raw.githubuserconten
 If you want to modify just **download it** in `~/Tools` , **edit it** and **run it**.
 
 ```bash
-rm -rf ~/Tools; mkdir ~/Tools && cd ~/Tools && wget https://raw.githubusercontent.com/manesec/tools4me/main/Kali_Machine/DownloadTools.py
+rm -rf ~/MachineTools; mkdir ~/MachineTools && cd ~/MachineTools && wget https://raw.githubusercontent.com/manesec/tools4me/main/Script_Kali_Machine/DownloadTools.py
 vim DownloadTools.py
 python3 DownloadTools.py
 ```
+
+**You can submit the issues if you running failed.**
 
 ## Test on
 
@@ -37,10 +39,6 @@ Kali 2021
 96M     ./Additions
 3.5G    .
 ```
-
-## Optional
-
-When you need to change the optional installation, edit the source before run. 
 
 ## Include Tools
 
@@ -79,6 +77,8 @@ When you need to change the optional installation, edit the source before run.
 + [PoshADCS](https://github.com/cfalta/PoshADCS)
 + [ADModule](https://github.com/samratashok/ADModule)
 + [SharpCollection](https://github.com/Flangvik/SharpCollection)
++ [NetSPI PowerShell](https://github.com/NetSPI/PowerShell)
++ [SharpView](https://github.com/tevora-threat/SharpView)
 
 **WordLists**
 

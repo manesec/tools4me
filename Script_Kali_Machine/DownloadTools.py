@@ -33,7 +33,7 @@ print("""
 █    █    ▐   ▐   █    ▐    █    ▐    ▐       █    ▐   █     ▐  
 ▐    ▐            ▐         ▐                 ▐        ▐     
             Download Tools on AMD64 - Tools4me by Mane.
-                           Version: 20220214
+                           Version: 20220217
                 https://github.com/manesec/tools4me
 ---------------------------------------------------------------""")
 import os
@@ -226,6 +226,16 @@ os.chdir("..")
 print("[>] Getting ADCS.ps1 ...")
 os.chdir("Windows")
 os.system("curl https://raw.githubusercontent.com/cfalta/PoshADCS/master/ADCS.ps1 -O ADCS.ps1")
+os.chdir("..")
+
+print("[>] Getting SharpView ...")
+os.chdir("Windows")
+os.system("curl https://github.com/tevora-threat/SharpView/raw/master/Compiled/SharpView.exe -O SharpView.exe")
+os.chdir("..")
+
+print("[>] Getting NetSPI PowerShell Scripts ...")
+os.chdir("Windows")
+os.system("git clone https://github.com/NetSPI/PowerShell.git NetSPIPowerShell")
 os.chdir("..")
 
 
