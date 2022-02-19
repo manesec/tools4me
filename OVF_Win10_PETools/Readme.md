@@ -42,7 +42,13 @@ SHA1: 9740581315d1c36bb8346d1c60d07464490bd971
 BLAKE2sp: 93d687499794fd8e649ef4bef7d1e019c4166fe7e79fecc7515634382038e4ba
 ```
 
-Public on February 20
+Unzip Password: `maneissofuckinggood`
+
+Download in : [Anonfiles](https://anonfiles.com/Baua00Icx7/Mane_WIN10_PETools_20220214_7z)    [Google Drive](https://drive.google.com/file/d/1OOj4g5_PuX6_myvIs_T3njIWE9e0LJer/view?usp=sharing)    [One Drive](https://zknueducn-my.sharepoint.com/:u:/g/personal/manesec_zknu_edu_cn/EduiyXrjmoBIgNIOKyRQjcsBEQp54na89_zfKL2ClexsGw?e=gFhn13)     [Weiyun](https://share.weiyun.com/Un4t8elt)     [Baidu](https://pan.baidu.com/s/1wGS_rcUKuGH-0NzRsF2YSQ?pwd=9ivi)    [Terabox](https://terabox.com/s/1tqhSB2q9kM4yj0baLzMHCw)
+
+Usercloud (30days): [01](https://userscloud.com/st10pa9of85j)  [02](https://userscloud.com/ebuklmtct2a1)  [03](https://userscloud.com/71t1uxo9wdtk)
+
+**Terabox Password**: ibds
 
 ## Spilt Files Hash
 
@@ -145,8 +151,8 @@ BLAKE2sp: 71af26c50ff132ea5b2ab511ccf958ee6e4e58c246d1f758219ad39ac793750e
 02/14/2022  06:49 PM    <DIR>          Scylla.v.0.9.8
 02/14/2022  06:28 PM    <DIR>          Smsniff-x64
 02/14/2022  04:54 PM    <DIR>          snapshot_2022-01-21_09-58
-02/14/2022  06:54 PM    <DIR>          StudyPE+ x64
-02/14/2022  06:49 PM    <DIR>          StudyPE+ x86
+02/14/2022  06:54 PM    <DIR>          StudyPE+ x64 111
+02/14/2022  06:49 PM    <DIR>          StudyPE+ x86 111
 02/14/2022  06:49 PM    <DIR>          Stud_PE
 02/14/2022  07:06 PM    <DIR>          Themida&winlicense UnPacKer v2.0
 02/14/2022  07:06 PM    <DIR>          Universal Extractor
