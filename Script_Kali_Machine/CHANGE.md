@@ -1,5 +1,17 @@
 # Change log
 
+## Update Version: 20220226
+
++ **Remove**: [Behinder](https://github.com/rebeyond/Behinder)
++ **Pack**: [unix-privesc-check](https://github.com/pentestmonkey/unix-privesc-check)
++ **Pack**: [SUDO_KILLER](https://github.com/TH3xACE/SUDO_KILLER)
++ **Update**: [DBeaver](https://dbeaver.io/download/)
++ **Add**: [Privesc](https://github.com/enjoiz/Privesc)
++ **Add**: [PowerUpSQL](https://github.com/NetSPI/PowerUpSQL)
++ **Add**: [feroxbuster](https://github.com/epi052/feroxbuster)
++ **Add**: [ADCollector](https://github.com/dev-2null/ADCollector)
++ **Add**: [WinPwn](https://github.com/S3cur3Th1sSh1t/WinPwn)
+
 ## Update Version: 20220217
 
 + **Add**: [NetSPI PowerShell](https://github.com/NetSPI/PowerShell)
@@ -35,3 +47,4 @@
 + **Add**: [Stowaway](https://github.com/ph4ntonn/Stowaway)
 + **Add**: [firefox_decrypt](https://github.com/unode/firefox_decrypt)
 + **Add**: [DBeaver](https://dbeaver.io/download/)
++ 

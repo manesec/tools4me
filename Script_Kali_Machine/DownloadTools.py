@@ -33,7 +33,7 @@ print("""
 █    █    ▐   ▐   █    ▐    █    ▐    ▐       █    ▐   █     ▐  
 ▐    ▐            ▐         ▐                 ▐        ▐     
             Download Tools on AMD64 - Tools4me by Mane.
-                           Version: 20220217
+                           Version: 20220226
                 https://github.com/manesec/tools4me
 ---------------------------------------------------------------""")
 import os
@@ -44,6 +44,8 @@ os.system("rm -rf Windows")
 os.system("rm -rf Tools")
 os.system("rm -rf Additions")
 os.system("rm -rf Wordlists")
+os.system("rm -rf Tools4mane")
+
 os.mkdir("Linux")
 os.mkdir("Windows")
 os.mkdir("Tools")
@@ -51,7 +53,7 @@ os.mkdir("Additions")
 os.mkdir("Wordlists")
 
 print(" :: Apt pre-install ::")
-os.system("sudo apt update && sudo apt -y install python3-pip neo4j gobuster zaproxy hashcat nikto")
+os.system("sudo apt update && sudo apt -y install python3-pip neo4j gobuster zaproxy hashcat nikto feroxbuster")
 
 print("---------------------------------------------------------------")
 if Optional_Installation["EXPLOITDB"]:
@@ -89,7 +91,7 @@ if Optional_Installation["DBEAVER"]:
     print(" :: Setting up DBeaver ::")
     os.mkdir("tmp")
     os.chdir("tmp")
-    os.system("wget https://github.com/dbeaver/dbeaver/releases/download/21.3.3/dbeaver-ce_21.3.3_amd64.deb -O dbeaver.deb")
+    os.system("wget https://github.com/dbeaver/dbeaver/releases/download/21.3.5/dbeaver-ce_21.3.5_amd64.deb -O dbeaver.deb")
     os.system("sudo dpkg -i dbeaver.deb")
     os.chdir("..")
     os.system("rm -rf tmp")
@@ -111,20 +113,6 @@ os.system("wget https://raw.githubusercontent.com/21y4d/nmapAutomator/master/nma
 print("[>] Getting Godzilla ...")
 os.system("wget https://github.com/BeichenDream/Godzilla/releases/latest/download/godzilla.jar --quiet -O Tools/godzilla.jar")
 
-print("[>] Getting Behinder ...")
-os.mkdir("tmp")
-os.chdir("tmp")
-os.system("wget https://github.com/rebeyond/Behinder/releases/download/Behinder_v3.0_Beta_11_for_tools/Behinder_v3.0_Beta_11.t00ls.zip --quiet -O Behinder.zip")
-os.system("wget https://gluonhq.com/download/javafx-11-0-2-sdk-linux/ --quiet -O javafx.zip")
-os.system("unzip Behinder.zip")
-os.system("unzip javafx.zip")
-os.remove("Behinder.zip")
-os.remove("javafx.zip")
-os.system("mv javafx-sdk-*/lib .")
-os.system("rm -rf javafx-sdk-*")
-os.chdir("..")
-os.system("mv tmp Tools/Behinder")
-
 print("[>] Getting Chisel ...")
 os.chdir("Tools")
 os.mkdir("Chisel")
@@ -139,6 +127,13 @@ os.chdir("..")
 
 print("---------------------------------------------------------------")
 print(" :: Installing For Windows Tools ::")
+
+print("[>] Getting Beroot ...")
+os.chdir("Windows")
+os.system("wget https://github.com/AlessandroZ/BeRoot/releases/latest/download/beRoot.zip -O beRoot.zip --quiet")
+os.system("unzip beRoot.zip")
+os.system("rm -r beRoot.zip")
+os.chdir("..")
 
 print("[>] Getting BloodHound ...")
 os.chdir("Windows")
@@ -195,6 +190,23 @@ os.system("rm mimikatz.zip")
 os.chdir("..")
 os.system("mv tmp Windows/Mimikatz")
 
+print("[>] Getting AD Collector ...")
+os.chdir("Windows")
+os.system("wget https://github.com/dev-2null/ADCollector/releases/download/Release/ADCollector.exe --quiet")
+os.chdir("..")
+
+print("[>] Getting ADACLScanner  ...")
+os.chdir("Windows")
+os.system("wget https://github.com/canix1/ADACLScanner/releases/latest/download/ADACLScan.ps1 --quiet")
+os.chdir("..")
+
+
+print("[>] Getting WinPwn ...")
+os.chdir("Windows")
+os.system("wget https://github.com/S3cur3Th1sSh1t/WinPwn/releases/latest/download/WinPwn.exe --quiet")
+os.system("wget https://github.com/S3cur3Th1sSh1t/WinPwn/releases/latest/download/WinPwn.ps1 --quiet")
+os.chdir("..")
+
 print("[>] Getting juicy-potato ...")
 os.chdir("Windows")
 os.system("wget https://github.com/ohpe/juicy-potato/releases/latest/download/JuicyPotato.exe --quiet")
@@ -203,6 +215,11 @@ os.chdir("..")
 print("[>] Getting Lovely-Potato ...")
 os.chdir("Windows")
 os.system("git clone https://github.com/TsukiCTF/Lovely-Potato.git")
+os.chdir("..")
+
+print("[>] Getting PowerUpSQL ...")
+os.chdir("Windows")
+os.system("wget https://raw.githubusercontent.com/NetSPI/PowerUpSQL/master/PowerUpSQL.ps1 -O PowerUpSQL.ps1 --quiet")
 os.chdir("..")
 
 print("[>] Getting kerbrute ...")
@@ -225,19 +242,24 @@ os.chdir("..")
 
 print("[>] Getting ADCS.ps1 ...")
 os.chdir("Windows")
-os.system("curl https://raw.githubusercontent.com/cfalta/PoshADCS/master/ADCS.ps1 -O ADCS.ps1")
+os.system("wget https://raw.githubusercontent.com/cfalta/PoshADCS/master/ADCS.ps1 -O ADCS.ps1 --quiet")
 os.chdir("..")
+
+print("[>] Getting Privesc.ps1 ...")
+os.chdir("Windows")
+os.system("wget https://raw.githubusercontent.com/enjoiz/Privesc/master/privesc.ps1 -O Privesc.ps1 --quiet")
+os.chdir("..")
+
 
 print("[>] Getting SharpView ...")
 os.chdir("Windows")
-os.system("curl https://github.com/tevora-threat/SharpView/raw/master/Compiled/SharpView.exe -O SharpView.exe")
+os.system("wget https://github.com/tevora-threat/SharpView/raw/master/Compiled/SharpView.exe -O SharpView.exe --quiet")
 os.chdir("..")
 
 print("[>] Getting NetSPI PowerShell Scripts ...")
 os.chdir("Windows")
 os.system("git clone https://github.com/NetSPI/PowerShell.git NetSPIPowerShell")
 os.chdir("..")
-
 
 
 print("---------------------------------------------------------------")
@@ -266,20 +288,19 @@ os.system("wget https://raw.githubusercontent.com/rebootuser/LinEnum/master/LinE
 print("[>] Getting unix-privesc-check ...")
 os.chdir("Linux")
 os.system("git clone https://github.com/pentestmonkey/unix-privesc-check.git Unix-privesc-check")
+os.system("tar -cf Unix-privesc-check.tar.gz Unix-privesc-check")
+os.system("rm -rf Unix-privesc-check")
 os.chdir("..")
 
 print("[>] Getting SUDO_KILLER ...")
 os.chdir("Linux")
 os.system("git clone https://github.com/TH3xACE/SUDO_KILLER.git Sudo_Killer")
+os.system("tar -cf Sudo_Killer.tar.gz Sudo_Killer")
+os.system("rm -rf Sudo_Killer")
 os.chdir("..")
 
 print("---------------------------------------------------------------")
 print(" :: Installing Additions Tools ::")
-
-print("[>] Getting BeRoot ...")
-os.chdir("Additions")
-os.system("git clone https://github.com/AlessandroZ/BeRoot.git")
-os.chdir("..")
 
 if Optional_Installation["BIG_WEBSHELL"] :
     print("[>] Getting Big Webshell Collection ...")
@@ -317,6 +338,11 @@ os.chdir("Wordlists")
 os.system("git clone https://github.com/danielmiessler/SecLists.git")
 os.chdir("..")
 
+print("[>] Getting Auto_Wordlists ...")
+os.chdir("Wordlists")
+os.system("git clone https://github.com/carlospolop/Auto_Wordlists.git")
+os.chdir("..")
+
 print("[>] Getting rockyou.txt ...")
 os.system("wget https://github.com/brannondorsey/naive-hashcat/releases/download/data/rockyou.txt -O Wordlists/rockyou.txt")
 
@@ -325,6 +351,11 @@ if Optional_Installation["DOP"]:
     os.chdir("Wordlists")
     os.system("git clone https://github.com/insightglacier/Dictionary-Of-Pentesting.git")
     os.chdir("..")
+
+print("[>] Getting Update.sh")
+os.system("wget https://raw.githubusercontent.com/manesec/tools4me/main/Script_Kali_Machine/Update.sh --quiet")
+os.system("chmod u+x Update.sh")
+print("If you want to update \"DownloadTools.py\" just run ./Update.sh ")
 
 print("-------------------------- Total ------------------------------")
 os.system("du -h --max-depth=1 .")

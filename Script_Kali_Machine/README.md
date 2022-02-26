@@ -2,20 +2,22 @@
 
 Quick to install tools on kali linux system for **attack machine** only.
 
+**Machine Tools = MTools**
+
 [Change Log](https://github.com/manesec/tools4me/blob/main/Script_Kali_Machine/CHANGE.md)
 
 ## Install
 
 ```bash
-rm -rf ~/MachineTools; mkdir ~/MachineTools && cd ~/MachineTools && curl https://raw.githubusercontent.com/manesec/tools4me/main/Script_Kali_Machine/DownloadTools.py | python3
+rm -rf ~/MTools; mkdir ~/MTools && cd ~/MTools && curl https://raw.githubusercontent.com/manesec/tools4me/main/Script_Kali_Machine/DownloadTools.py | python3
 ```
 
 **If you need to update the tools just run it again!**
 
-If you want to modify just **download it** in `~/Tools` , **edit it** and **run it**.
+If you want to modify just **download it** in `~/MTools` , **edit it** and **run it**.
 
 ```bash
-rm -rf ~/MachineTools; mkdir ~/MachineTools && cd ~/MachineTools && wget https://raw.githubusercontent.com/manesec/tools4me/main/Script_Kali_Machine/DownloadTools.py
+rm -rf ~/MTools; mkdir ~/MTools && cd ~/MTools && wget https://raw.githubusercontent.com/manesec/tools4me/main/Script_Kali_Machine/DownloadTools.py
 vim DownloadTools.py
 python3 DownloadTools.py
 ```
@@ -28,16 +30,16 @@ Kali 2021
 
 ## Size
 
-**Total `3.5 GByte` in `~/Tools` .**
+**Total `3.4 GByte` in `~/MTools` .**
 
 ```bash
-240K    ./Tools4mane
-179M    ./Tools
+340K    ./Tools4mane
+60M     ./Tools
 2.5G    ./Wordlists
-785M    ./Windows
-37M     ./Linux
-96M     ./Additions
-3.5G    .
+818M    ./Windows
+63M     ./Linux
+23M     ./Additions
+3.4G    .
 ```
 
 ## Include Tools
@@ -52,6 +54,7 @@ Kali 2021
 + [exploitdb full version](https://www.exploit-db.com/)
 + [nikto](https://github.com/sullo/nikto)
 + [DBeaver](https://dbeaver.io/download/)
++ [feroxbuster](https://github.com/epi052/feroxbuster)
 
 **Linux**
 
@@ -75,10 +78,15 @@ Kali 2021
 + [Lovely-Potato](https://github.com/TsukiCTF/Lovely-Potato)
 + [kerbrute](https://github.com/TarlogicSecurity/kerbrute)
 + [PoshADCS](https://github.com/cfalta/PoshADCS)
-+ [ADModule](https://github.com/samratashok/ADModule)
++ [AD Module](https://github.com/samratashok/ADModule)
 + [SharpCollection](https://github.com/Flangvik/SharpCollection)
 + [NetSPI PowerShell](https://github.com/NetSPI/PowerShell)
 + [SharpView](https://github.com/tevora-threat/SharpView)
++ [BeRoot](https://github.com/AlessandroZ/BeRoot)
++ [Privesc](https://github.com/enjoiz/Privesc)
++ [PowerUpSQL](https://github.com/NetSPI/PowerUpSQL)
++ [ADCollector](https://github.com/dev-2null/ADCollector)
++ [WinPwn](https://github.com/S3cur3Th1sSh1t/WinPwn)
 
 **WordLists**
 
@@ -96,6 +104,5 @@ Kali 2021
 
 **Additions**
 
-+ [BeRoot](https://github.com/AlessandroZ/BeRoot)
 + [HackBrowserData](https://github.com/moonD4rk/HackBrowserData)
 + **Optional**: [Webshell](https://github.com/tennc/webshell)
