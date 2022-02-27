@@ -53,13 +53,13 @@ os.mkdir("Additions")
 os.mkdir("Wordlists")
 
 print(" :: Apt pre-install ::")
-os.system("sudo apt update && sudo apt -y install python3-pip neo4j gobuster zaproxy hashcat nikto feroxbuster metasploit-framework")
+os.system("sudo apt update && sudo apt -y install python3-pip neo4j gobuster zaproxy hashcat nikto feroxbuster")
 
 print("---------------------------------------------------------------")
 if Optional_Installation["EXPLOITDB"]:
-    print(" :: Updating ExploitDB ::")
-    os.system("sudo apt update && sudo apt -y install exploitdb && sudo searchsploit -u")
-
+    print(" :: Updating ExploitDB And MSF ::")
+    os.system("sudo apt update && sudo apt -y install exploitdb metasploit-framework && sudo searchsploit -u")
+    os.system("sudo msfdb reinit")
 print("---------------------------------------------------------------")
 if Optional_Installation["ZAP"] : 
     print(" :: Setting up zaproxy ::")
