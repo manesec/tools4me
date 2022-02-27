@@ -53,7 +53,7 @@ os.mkdir("Additions")
 os.mkdir("Wordlists")
 
 print(" :: Apt pre-install ::")
-os.system("sudo apt update && sudo apt -y install python3-pip neo4j gobuster zaproxy hashcat nikto feroxbuster")
+os.system("sudo apt update && sudo apt -y install python3-pip neo4j gobuster zaproxy hashcat nikto feroxbuster metasploit-framework")
 
 print("---------------------------------------------------------------")
 if Optional_Installation["EXPLOITDB"]:
