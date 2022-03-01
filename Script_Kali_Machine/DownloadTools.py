@@ -33,7 +33,7 @@ print("""
 █    █    ▐   ▐   █    ▐    █    ▐    ▐       █    ▐   █     ▐  
 ▐    ▐            ▐         ▐                 ▐        ▐     
             Download Tools on AMD64 - Tools4me by Mane.
-                           Version: 20220226
+                           Version: 20220301
                 https://github.com/manesec/tools4me
 ---------------------------------------------------------------""")
 import os
@@ -157,6 +157,16 @@ os.chdir("..")
 print("[>] Getting Nishang ...")
 os.chdir("Windows")
 os.system("git clone https://github.com/samratashok/nishang.git Nishang")
+os.chdir("..")
+
+print("[>] Getting RedTeamPowershellScripts ...")
+os.chdir("Windows")
+os.system("git clone https://github.com/Mr-Un1k0d3r/RedTeamPowershellScripts.git RedTeamPowershellScripts")
+os.chdir("..")
+
+print("[>] Getting gosecretsdump ...")
+os.chdir("Windows")
+os.system("wget https://github.com/C-Sto/gosecretsdump/releases/download/v0.3.1/gosecretsdump_win_v0.3.1.exe --quiet")
 os.chdir("..")
 
 print("[>] Getting python Impacket ...")

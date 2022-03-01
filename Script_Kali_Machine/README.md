@@ -87,6 +87,8 @@ Kali 2021
 + [PowerUpSQL](https://github.com/NetSPI/PowerUpSQL)
 + [ADCollector](https://github.com/dev-2null/ADCollector)
 + [WinPwn](https://github.com/S3cur3Th1sSh1t/WinPwn)
++ [RedTeamPowershellScripts](https://github.com/Mr-Un1k0d3r/RedTeamPowershellScripts)
++ [gosecretsdump](https://github.com/C-Sto/gosecretsdump)
 
 **WordLists**
 
