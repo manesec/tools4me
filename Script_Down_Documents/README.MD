@@ -7,7 +7,7 @@ Quick to install tools on kali linux system for **attack machine** only.
 ## Install
 
 ```bash
-sudo curl https://raw.githubusercontent.com/manesec/tools4me/main/Script_Kali_Machine/DownloadTools.py | python3
+sudo curl https://raw.githubusercontent.com/manesec/tools4me/main/Script_Down_Documents/DownloadDocument.pyhttps://raw.githubusercontent.com/manesec/tools4me/main/Script_Down_Documents/DownloadDocument.py | python3
 ```
 
 **If you need to update the tools just run it again!**
@@ -16,13 +16,15 @@ sudo curl https://raw.githubusercontent.com/manesec/tools4me/main/Script_Kali_Ma
 
 ## Size
 
-**Total `1.3 GByte` in `/opt/MDoc` .**
+**Total `2.2 GByte` in `/opt/MDoc` .**
 
 ```bash
 244M    ./Hacktricks
-1.1G    ./CheatSheet
-24M     ./PayloadsAllTheThings
-1.3G    .
+1.9G    ./CheatSheet
+27M     ./lpeworkshop
+232K    ./ToolsList
+25M     ./PayloadsAllTheThings
+2.2G    .
 ```
 
 ## Include Documents
@@ -31,6 +33,7 @@ sudo curl https://raw.githubusercontent.com/manesec/tools4me/main/Script_Kali_Ma
 
 + [hacktricks](https://github.com/carlospolop/hacktricks)
 + [PayloadsAllTheThings](https://github.com/swisskyrepo/PayloadsAllTheThings)
++ [lpeworkshop](https://github.com/sagishahar/lpeworkshop)
 
 **CheatSheet:**
 
@@ -41,3 +44,11 @@ sudo curl https://raw.githubusercontent.com/manesec/tools4me/main/Script_Kali_Ma
 + [cheatsheet](https://github.com/darkmatter18/cheatsheet)
 + [Huge-Collection-of-CheatSheet](https://github.com/JonnyBanana/Huge-Collection-of-CheatSheet)
 + [Offensive-Reverse-Shell-Cheat-Sheet](https://github.com/d4t4s3c/Offensive-Reverse-Shell-Cheat-Sheet)
++ [Pentesting](https://github.com/ac3mcl0ud/Pentesting)
++ [LFI---RCE-Cheat-Sheet](https://github.com/RoqueNight/LFI---RCE-Cheat-Sheet)
++ [Active-Directory-Exploitation-Cheat-Sheet](https://github.com/Integration-IT/Active-Directory-Exploitation-Cheat-Sheet)
++ [awesome-php-security](https://github.com/guardrailsio/awesome-php-security)
+
+**Tools**:
+
++ [awesome-php-security](https://github.com/guardrailsio/awesome-php-security)

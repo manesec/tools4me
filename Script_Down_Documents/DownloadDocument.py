@@ -10,7 +10,7 @@ print("""
 █    █    ▐   ▐   █    ▐    █    ▐    ▐       █    ▐   █     ▐  
 ▐    ▐            ▐         ▐                 ▐        ▐     
         Download Documents on your system - Tools4me by Mane.
-                           Version: 20220301
+                           Version: 20220302
                 https://github.com/manesec/tools4me
 ---------------------------------------------------------------""")
 def UpdateFromGithub(URL,Locate,Branches):
@@ -18,7 +18,7 @@ def UpdateFromGithub(URL,Locate,Branches):
         os.system("git clone -b %s %s %s " % (Branches,URL,Locate))
     else:
         os.chdir(Locate)
-        os.system("git pull origin %s" % (Branches))
+        os.system("git pull origin %s || git stash drop" % (Branches))
         os.chdir("..")
 
 
@@ -38,6 +38,10 @@ UpdateFromGithub("https://github.com/carlospolop/hacktricks.git","Hacktricks","m
 
 print("[>] Getting PayloadsAllTheThings ...")
 UpdateFromGithub("https://github.com/swisskyrepo/PayloadsAllTheThings.git","PayloadsAllTheThings","master")
+
+print("[>] Getting Privilege Escalation Workshop ...")
+UpdateFromGithub("https://github.com/sagishahar/lpeworkshop.git","lpeworkshop","master")
+
 
 #######################################################
 # CheatSheet
@@ -67,6 +71,26 @@ UpdateFromGithub("https://github.com/JonnyBanana/Huge-Collection-of-CheatSheet.g
 print("[>] Getting Offensive Reverse Shell Cheat Sheet ...")
 UpdateFromGithub("https://github.com/d4t4s3c/Offensive-Reverse-Shell-Cheat-Sheet.git","Offensive_Reverse_Shell_Cheat_Sheet","master")
 
+print("[>] Getting Simple Pentesting Cheatsheet ...")
+UpdateFromGithub("https://github.com/ac3mcl0ud/Pentesting.git","Simple_Pentesting_Cheatsheet","main")
+
+print("[>] Getting PHP LFI RCE Cheatsheet ...")
+UpdateFromGithub("https://github.com/RoqueNight/LFI---RCE-Cheat-Sheet.git","PHP_LFI_RCE_Cheatsheet","master")
+
+print("[>] Getting Active-Directory-Exploitation-Cheat-Sheet ...")
+UpdateFromGithub("https://github.com/Integration-IT/Active-Directory-Exploitation-Cheat-Sheet","Active-Directory-Exploitation-Cheat-Sheet","master")
+
+os.chdir("..")
+#######################################################
+# Tools List
+#######################################################
+if not os.path.exists("ToolsList"):
+    os.mkdir("ToolsList")
+os.chdir("ToolsList")
+
+print("[>] Getting awesome-php-security ...")
+UpdateFromGithub("https://github.com/guardrailsio/awesome-php-security.git","awesome_php_security","master")
+
 os.chdir("..")
 # -----------------------------------------------------
 
@@ -76,4 +100,5 @@ os.system("chmod 755 -R /opt/MDoc")
 os.system("du -h --max-depth=1")
 
 print("[!] All Document in /opt/MDoc ")
+print(" -  If have error just run it again, it will automatic fix.") 
 print("Done! by Mane.")
