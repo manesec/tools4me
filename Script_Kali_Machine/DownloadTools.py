@@ -418,14 +418,14 @@ if CONFIG_JSON["Get_HackBrowserData"]:
     download_files = [
         ["^hack-browser-data--linux-386.zip$","hack-browser-data--linux-386"],
         ["^hack-browser-data--linux-amd64.zip$","hack-browser-data--linux-amd64"],
-        ["^hack-browser-data--windows-32bit.zip$","hack-browser-data--windows-32bit"],
-        ["^hack-browser-data--windows-64bit.zip$","hack-browser-data--windows-64bit"]
+        ["^hack-browser-data--windows-32bit.zip$","hack-browser-data--windows-32bit.exe"],
+        ["^hack-browser-data--windows-64bit.zip$","hack-browser-data--windows-64bit.exe"]
     ]
     for name,id,update_at,download_url,LocalName in ReleasesFileGetFromGithubRepo("https://api.github.com/repos/moonD4rk/HackBrowserData/releases/latest",download_files):
-        if (ReleasesFileNeedUpdate(LocalName,name,id,update_at)):
+        if (ReleasesFileNeedUpdate(LocalName,name,id,update_at) or (not os.path.exists(LocalName))):
             print(" +  Downloading package ...")
             WgetDownloadFile(download_url,LocalName+".zip",True)
-            os.system('unzip "%s"' % (LocalName + ".zip"))
+            os.system('unzip -o "%s"' % (LocalName + ".zip"))
             os.remove(LocalName + ".zip")
             ReleasesFileSaveVersion(LocalName,name,id,update_at)
             print(" !  Done.")
