@@ -47,7 +47,6 @@ sudo curl https://raw.githubusercontent.com/manesec/tools4me/main/Script_Down_Do
 + [Pentesting](https://github.com/ac3mcl0ud/Pentesting)
 + [LFI---RCE-Cheat-Sheet](https://github.com/RoqueNight/LFI---RCE-Cheat-Sheet)
 + [Active-Directory-Exploitation-Cheat-Sheet](https://github.com/Integration-IT/Active-Directory-Exploitation-Cheat-Sheet)
-+ [awesome-php-security](https://github.com/guardrailsio/awesome-php-security)
 
 **Tools**:
 

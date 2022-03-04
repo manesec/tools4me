@@ -1,0 +1,228 @@
+{
+    # This script with version: 20220304
+
+    #======================================================
+    # Github API Token
+    #======================================================  
+    
+    # I recommend you to apply for the github API token, it is free.
+    # If not, github only allow 60 requests per hours.
+    # With api token it will have 5000 requests per hours.
+
+    # The program use token only for check update files.
+    # YOU CAN DISSELECT ALL `Select scopes` WHEN YOU CREATE THE TOKEN.
+    # See: https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token
+
+    "API_TOKEN":"",
+
+    #======================================================
+    # Update DB
+    #======================================================    
+
+    # [Update Exploit DB]
+    # Every week will be post update package.
+    # it will be take a long time to update.
+    "Update_exploit_db": true,
+
+    # [Update metasploit-framework]
+    "Update_msf_db": true,
+
+    #======================================================
+    # Good Tools from apt
+    #======================================================    
+
+    # [Brute-force tools]
+    "Install_Gobuster": true,
+    "Install_Feroxbuster": true,
+
+    # [Full version of hashcat]
+    # Support more encryption methods.
+    "Install_Hashcat": true,
+
+    # [Full version of john]
+    # Include ssh2john etc...
+    "Install_John": true,
+
+    # [Auto Testing]
+    "Install_Nikto": true,
+
+    # [Sniffing Tools]
+    "Install_ZAProxy": false,
+
+    #======================================================
+    # Good Tools from pip
+    #======================================================  
+      
+    # [pwncat-cs]
+    # use for client reverse shell like netcat.
+    "Install_PwncatCS": true,
+
+    #======================================================
+    # Some Useful Tools
+    #======================================================   
+     
+    # [DBeaver - Community Edition]
+    # Use for connect databases with gui.
+    "Install_DBeaver": true,
+
+    # [marktext]
+    # Use for Reading the markdown files.
+    "Install_Marktext": true,
+
+    #======================================================
+    # Tools
+    #======================================================    
+    
+    # [tools4mane]
+    # Some useful script write by mane.
+    "GET_tools4mane": true,
+
+    # [nmapAutomator]
+    # The main goal for this script is to automate the process of enumeration & recon that is run every time, and instead focus our attention on real pentesting.
+    "GET_nmapAutomator": true,
+
+    # [Godzilla]
+    # A new generation of webshell tools.
+    "GET_Godzilla": true,
+
+    # [Chisel]
+    # A fast TCP/UDP tunnel over HTTP.
+    "GET_Chisel": true,
+
+    "Get_BlackArch_Webshell":true,
+
+    # [Big Webshell Collection]
+    # Include all the webshell.
+    "Get_Big_Webshell": false,
+
+    "Get_static_binaries": true,
+
+    "Get_cupp": true,
+
+    "Get_krbrelayx":true,
+
+    "Get_HackBrowserData": true,
+
+    #======================================================
+    # For Remote Windows
+    #======================================================    
+    
+    # [BeRoot]
+    # 2017 - Privilege Escalation Project - Windows
+    "Get_BeRoot": true,
+
+    # [Boodhound]
+    "Get_Boodhound": true,
+
+    # [Gosecretsdump]
+    # Dump ntds.dit really fast
+    "Get_Gosecretsdump":true,
+
+    # [Evil-winrm]
+    "Install_evil_winrm": true,
+
+    # [python3-impacket]
+    "Install_python3_impacket": true,
+
+    # [winPEAS]
+    "Get_winPEAS": true,
+
+    # [Mimikatz]
+    "Get_Mimikatz": true,
+
+    # [dev2null Tools set]
+    # include ADIDNSRecords.exe, KerberosRun.exe, ADCollector.exe
+    "Get_dev2null_tools": true,
+
+    # [WinPwn by S3cur3Th1sSh1t]
+    # Automation for internal Windows Penetrationtest / AD-Security
+    "Get_WinPwn": true,
+
+    "Get_Chisel": true,
+
+    "Get_Lovely_Potato":true,
+
+    "Get_Kerbrute": true,
+
+    "Get_SharpCollection": true,
+
+    #======================================================
+    # Powershell Script for windows
+    #======================================================    
+    
+    # [PowerSploit]
+    # 2015 - PowerSploit - A PowerShell Post-Exploitation Framework.
+    "Get_PowerSploit_master": true,
+    # More stable version. ippsec love this.
+    "Get_PowerSploit_dev": true,
+
+    # [Nishang]
+    # Nishang - Offensive PowerShell for red team, penetration testing and offensive security.
+    "Get_Nishang": true,
+
+    # [Red Team Powershell Scripts]
+    # Various PowerShell scripts that may be useful during red team exercise
+    "Get_RedTeamPowershellScripts": true,
+
+    # [PowerShell-Suite]
+    "Get_PowerShell_Suite":true,
+
+    # [ADACLScanner]
+    # Repo for ADACLScan.ps1 - Your number one script for ACL's in Active Directory
+    "Get_ADACLScanner":true,
+
+    "Get_PowerUpSQL":true,
+
+    "Get_NetSPIPowershell":true,
+
+    "Get_ADModule": true,
+
+    # [Privesc]
+    # Like linPEAS
+    "Get_Privesc": true,
+    
+    "Get_PowerShell_Obfuscator": true,
+
+    "Get_ADLab":true,
+    "Get_BadBlood":true,
+    "Get_AdsiPS":true,
+    "Get_ADEssentials":true,
+    "Get_Active_Directory_Scripts":true,
+    "Get_PowerSharpPack":true,
+    "Get_Vulnerable_AD":true,
+    "Get_PSHTML_AD_Report":true,
+    "Get_adPEAS":true,
+
+
+    # [Personal Powershell Collections]
+    "Get_puckiestyle_Powershell": true,
+    "Get_sagarv26_Powershell":true,
+
+    #======================================================
+    # Linux
+    #======================================================    
+    "Get_pspy":true,
+    "Get_linPEAS":true,
+    "Get_LinEnum":true,
+    "Get_LSE":true,
+    "Get_sudo_killer":true,
+    "Get_unix_privesc_check":true,
+
+    #======================================================
+    # Wordlists
+    #======================================================    
+
+    "Get_secLists":true,
+    "Get_Auto_Wordlists":true,
+    "Get_DOC":true,
+    "Get_Rockyou":true,
+    "Get_kkrypt0nn_Wordlists":true,
+
+    #======================================================
+    # You know what I mean.
+    #======================================================    
+
+    # We hope you love this.
+    "mane_have_money": false
+    
+}

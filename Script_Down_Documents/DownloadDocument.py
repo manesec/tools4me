@@ -18,7 +18,7 @@ def UpdateFromGithub(URL,Locate,Branches):
         os.system("git clone -b %s %s %s " % (Branches,URL,Locate))
     else:
         os.chdir(Locate)
-        os.system("git pull origin %s || git stash drop" % (Branches))
+        os.system("git pull origin %s || (git stash drop && git pull origin %s )" % (Branches,Branches))
         os.chdir("..")
 
 
