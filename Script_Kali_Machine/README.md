@@ -9,7 +9,7 @@ Quick to install tools on kali linux system for **attack machine** only.
 ## Install
 
 ```bash
-sudo curl https://raw.githubusercontent.com/manesec/tools4me/main/Script_Kali_Machine/DownloadTools.py | python
+sudo curl https://raw.githubusercontent.com/manesec/tools4me/main/Script_Kali_Machine/DownloadTools.py | sudo python3
 ```
 
 **If you need to update the tools just run it again!**
