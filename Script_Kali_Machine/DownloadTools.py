@@ -22,7 +22,7 @@ COUNTER_RUNNING = 0
 COUNTER_TOTAL = 0
 LOCAL_DB_PATH = "/opt/MTools/.tools4me/"
 LOCAL_DATA_PATH = "/opt/MTools/.data/"
-Default_Config_URL = "NULL"
+Default_Config_URL = "https://raw.githubusercontent.com/manesec/tools4me/main/Script_Kali_Machine/config.json"
 
 def CheckGithubAPIQuta():
     import requests
@@ -1080,6 +1080,7 @@ if CONFIG_JSON["Get_kkrypt0nn_Wordlists"]:
 
 CheckGithubAPIQuta()
 
+os.system("chmod 755 -R .")
 print("-------------------------- Total ------------------------------")
 os.system("du -h --max-depth=1 .")
 print("\nDone! -- by manesec.")
